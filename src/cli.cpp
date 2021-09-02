@@ -197,14 +197,14 @@ int main(int argc, char *argv[]) try {
             exit(1);
         }
     } else if (operation == "verify") {
-        if (argc < 4) {
+        if (argc < 5) {
             HelpAndQuit(options);
         }
         Verifier verifier = Verifier();
 
-        id = Strip0x(id);
-        string proof = Strip0x(argv[2]);
-        string challenge = Strip0x(argv[3]);
+        id = Strip0x(argv[2]);
+        string proof = Strip0x(argv[3]);
+        string challenge = Strip0x(argv[4]);
         if (id.size() != 64) {
             cout << "Invalid ID, should be 32 bytes" << endl;
             exit(1);
